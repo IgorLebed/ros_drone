@@ -7,7 +7,7 @@ geometry_msgs::TwistStamped geom_msg;
 
 //ros::Subscriber geom_sub;
 
-void attCallback(const geometry_msgs::TwistStampedConstPtr &att)
+void attitude_callback(const geometry_msgs::TwistStampedConstPtr &att)
 {
         std::cout << "\nroll \t\tpitch \t\tyaw \t\trollspeed \tpitchspeed \tyawspeed";
         std::cout << "\n" << att->twist.linear.x << "\t" << att->twist.linear.y << "\t" << att->twist.linear.z;
@@ -17,10 +17,11 @@ void attCallback(const geometry_msgs::TwistStampedConstPtr &att)
 
 int main(int argc, char **argv)
 {
-        ros::init(argc, argv, "att_euler_cb");
+        ros::init(argc, argv, "attitude_euler_callback");
         ros::NodeHandle nh;
 
-        ros::Subscriber sub = nh.subscribe("/flytsim/mavros/imu/data_euler", 1, attCallback);
+        //TODO ("/flytsim/mavros/..") -> ("/"+global_namespace+"...")
+        ros::Subscriber sub = nh.subscribe("/flytsim/mavros/imu/data_euler", 1, attitude_callback);
         ros::spin();
         return 0;
 }

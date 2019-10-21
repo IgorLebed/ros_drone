@@ -12,7 +12,7 @@ sensor_msgs::BatteryState battery_date;
 ros::ServiceClient land_client;
 ros::Subscriber battery_sub;
 
-void chatterCallback(const sensor_msgs::BatteryStateConstPtr &battery)
+void battery_callback(const sensor_msgs::BatteryStateConstPtr &battery)
 {
 
   ros::NodeHandle n;
@@ -25,12 +25,12 @@ void chatterCallback(const sensor_msgs::BatteryStateConstPtr &battery)
 
   //std::cout << "\nVoltage \tcurrent";
   //std::cout << "\n" << battery->voltage << "\t\t" << battery->current;
-  std::cout << "\nValtage";
+  std::cout << "\nVoltage";
   std::cout << "\n" << battery->voltage << "\n";
 
   float x = battery->voltage;
-  if (x < 20){
-    ROS_INFO("FAIL BATTERY");
+  if (x < 23){
+    ROS_INFO("FAILED BATTERY VOLTAGE");
     ROS_INFO("Landing");
     land_srv.request.async=false;
     land_client.call(land_srv);
@@ -43,14 +43,14 @@ void chatterCallback(const sensor_msgs::BatteryStateConstPtr &battery)
 
 int main(int argc, char **argv)
 {
-  ros::init(argc, argv, "listener_battery");
+  ros::init(argc, argv, "battery_callback");
   ros::NodeHandle n;
 
   //ros::ServiceClient namespace_client = n.serviceClient<core_api::ParamGetGlobalNamespace>("/get_global_namespace");
   //namespace_client.call(namespace_srv);
   //global_namespace = namespace_srv.response.param_info.param_value;
 
-  ros::Subscriber sub = n.subscribe("/flytsim/mavros/battery", 1, chatterCallback);
+  ros::Subscriber sub = n.subscribe("/flytsim/mavros/battery", 1, battery_callback);
   ros::spin();
 
   //land_client   = n.serviceClient<core_api::Land>("/"+global_namespace+"/navigation/land");

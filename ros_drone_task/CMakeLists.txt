@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(ros_demoapps)
+project(ros_drone_task)
 
 ## Add support for C++11, supported in ROS Kinetic and newer
 add_definitions(-std=c++14)
@@ -133,23 +133,23 @@ include_directories(
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
-add_executable(demoapp1_node src/demoapp1.cpp)
-target_link_libraries(demoapp1_node ${catkin_LIBRARIES})
+add_executable(flight2point_node src/flight_2_point.cpp)
+target_link_libraries(flight2point_node ${catkin_LIBRARIES})
 
-add_executable(demoapp2_node src/demoapp2.cpp)
-target_link_libraries(demoapp2_node ${catkin_LIBRARIES})
+add_executable(flight2change_point_node src/flight_2_change_point_.cpp)
+target_link_libraries(flight2change_node ${catkin_LIBRARIES})
 
-add_executable(att_check_node src/att_check.cpp)
-target_link_libraries(att_check_node ${catkin_LIBRARIES})
+add_executable(attitude_check_node src/attitude_check.cpp)
+target_link_libraries(attitude_check_node ${catkin_LIBRARIES})
 
-add_executable(b_node src/test_battery.cpp)
-target_link_libraries(b_node ${catkin_LIBRARIES})
+add_executable(battery_check_node src/battery_check.cpp)
+target_link_libraries(battery_check_node ${catkin_LIBRARIES})
 
-add_executable(test_gpos_node src/test_gpos.cpp)
-target_link_libraries(test_gpos_node ${catkin_LIBRARIES})
+add_executable(global_position_node src/global_position.cpp)
+target_link_libraries(global_position_node ${catkin_LIBRARIES})
 
-add_executable(emergency_land_node src/emergency_battery.cpp)
-target_link_libraries(emergency_land_node ${catkin_LIBRARIES})
+add_executable(emergency_battery_land_node src/emergency_battery.cpp)
+target_link_libraries(emergency_battery_land_node ${catkin_LIBRARIES})
 
 #############
 ## Install ##
