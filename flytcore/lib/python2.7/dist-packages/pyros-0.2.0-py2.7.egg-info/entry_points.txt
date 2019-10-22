@@ -1,3 +1,0 @@
-[console_scripts]
-pyros = pyros.__main__:nosemain
-

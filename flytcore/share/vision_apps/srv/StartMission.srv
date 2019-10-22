@@ -1,9 +1,0 @@
-float32 holding_time
-float32 holding_distance
-bool from_origin
-bool async
----
-bool success
-uint8 error_code
-string message
-
