@@ -31,7 +31,7 @@ bool position_set(float x, float y, float z)
 
 int main(int argc, char **argv)
 {
-  ros::init(argc, argv, "roscpp_demoapp1");
+  ros::init(argc, argv, "flight_2_point");
   ros::NodeHandle nh;
 
   ros::ServiceClient namespace_client = nh.serviceClient<core_api::ParamGetGlobalNamespace>("/get_global_namespace");
