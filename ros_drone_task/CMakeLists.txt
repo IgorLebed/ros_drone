@@ -137,7 +137,7 @@ add_executable(flight2point_node src/flight_2_point.cpp)
 target_link_libraries(flight2point_node ${catkin_LIBRARIES})
 
 add_executable(flight2change_point_node src/flight_2_change_point_.cpp)
-target_link_libraries(flight2change_node ${catkin_LIBRARIES})
+target_link_libraries(flight2change_point_node ${catkin_LIBRARIES})
 
 add_executable(attitude_check_node src/attitude_check.cpp)
 target_link_libraries(attitude_check_node ${catkin_LIBRARIES})
