@@ -25,7 +25,7 @@ void battery_callback(const sensor_msgs::BatteryStateConstPtr &battery)
   global_namespace = namespace_srv.response.param_info.param_value;
 
   land_client   = n.serviceClient<core_api::Land>("/"+global_namespace+"/navigation/land");
-  rtl_client    = n.serviceClient<core_api::RTL>("/"+global_namespace+"/navigation/rtl")
+  rtl_client    = n.serviceClient<core_api::RTL>("/"+global_namespace+"/navigation/rtl");
 
   std::cout << "\nVoltage";
   std::cout << "\n" << battery->voltage << "\n";
@@ -49,7 +49,7 @@ int main(int argc, char **argv)
   ros::init(argc, argv, "battery_callback");
   ros::NodeHandle n;
 
-  ros::Subscriber sub = n.subscribe("/flytsim/mavros/battery", 1, battery_callback);
+  ros::Subscriber sub = n.subscribe("/flytos/mavros/battery", 1, battery_callback);
   ros::spin();
 
   return 0;
