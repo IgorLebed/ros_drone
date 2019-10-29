@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
   <name>emergency_system</name>
-  <version>0.0.1</version>
+  <version>0.0.0</version>
   <description>The ros program emergency for drone</description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag --> 
