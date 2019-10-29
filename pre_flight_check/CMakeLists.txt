@@ -133,6 +133,9 @@ include_directories(
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
+add_executable(arming_node src/arming.cpp)
+target_link_libraries(arming_node ${catkin_LIBRARIES})
+
 add_executable(attitude_check_node src/attitude_check.cpp)
 target_link_libraries(attitude_check_node ${catkin_LIBRARIES})
 
