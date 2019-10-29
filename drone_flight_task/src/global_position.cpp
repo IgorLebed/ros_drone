@@ -19,7 +19,7 @@ int main(int argc, char **argv)
   ros::init(argc, argv, "listener");
   ros::NodeHandle n;
 // %Tag(SUBSCRIBER)%
-  ros::Subscriber sub = n.subscribe("/flytsim/mavros/global_position/global", 1000, position_callback);
+  ros::Subscriber sub = n.subscribe("/flytos/mavros/global_position/global", 1000, position_callback);
 // %EndTag(SUBSCRIBER)%
   ros::spin();
   return 0;

@@ -50,12 +50,6 @@ int main(int argc, char **argv)
     ROS_ERROR("Failed to takeoff");
     return 1;
   }
-  /*
-   position_set(5,0,-3);       //Sending Position Setpoints
-   position_set(5,5,-3);
-   position_set(0,5,-3);
-   position_set(0,0,-3);
-  */
 
   if(!position_set(5,0,-3))
   {

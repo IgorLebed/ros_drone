@@ -46,7 +46,7 @@ int main(int argc, char **argv)
   ros::ServiceClient namespace_client = nh.serviceClient<core_api::ParamGetGlobalNamespace>("/get_global_namespace");
   namespace_client.call(namespace_srv);
   global_namespace = namespace_srv.response.param_info.param_value;
-  
+
   takeoff_client = nh.serviceClient<core_api::TakeOff>("/"+global_namespace+"/navigation/take_off");
   land_client    = nh.serviceClient<core_api::Land>("/"+global_namespace+"/navigation/land");
   pos_client     = nh.serviceClient<core_api::PositionSet>("/"+global_namespace+"/navigation/position_set");
@@ -57,40 +57,36 @@ int main(int argc, char **argv)
   if(!takeoff_srv.response.success)
   {
     ROS_ERROR("Failed to takeoff");
-    return 1;    
+    return 1;
   }
-  // position_set(5,0,-3);       //Sending Position Setpoints
-  // position_set(5,5,-3);
-  // position_set(0,5,-3);
-  // position_set(0,0,-3);
 
   if(!position_set(side_length,0,-3))
   {
     ROS_ERROR("Failed to set position");
-    return 1;    
+    return 1;
   }
 
   if(!position_set(side_length,side_length,-3))
   {
     ROS_ERROR("Failed to set position");
-    return 1;    
+    return 1;
   }
 
   if(!position_set(0,side_length,-3))
   {
     ROS_ERROR("Failed to set position");
-    return 1;    
+    return 1;
   }
 
   if(!position_set(0,0,-3))
   {
     ROS_ERROR("Failed to set position");
-    return 1;    
+    return 1;
   }
 
   ROS_INFO("Landing");
   land_srv.request.async =false;
-  land_client.call(land_srv); 
+  land_client.call(land_srv);
   if(!land_srv.response.success)
   {
     ROS_ERROR("Failed to Land!");
