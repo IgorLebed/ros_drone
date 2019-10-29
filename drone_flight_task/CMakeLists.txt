@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(drone_flight_task)
+project(ros_flight_task)
 
 ## Add support for C++11, supported in ROS Kinetic and newer
-add_definitions(-std=c++11)
+add_definitions(-std=c++14)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
@@ -102,12 +102,12 @@ find_package(catkin REQUIRED COMPONENTS
 ## LIBRARIES: libraries you create in this project that dependent projects also need
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
-#catkin_package(
-   #INCLUDE_DIRS include
-   #LIBRARIES roscpp_demoapp
-   #CATKIN_DEPENDS core_api roscpp rospy
-   #DEPENDS system_lib
-#)
+catkin_package(
+#  INCLUDE_DIRS include
+#  LIBRARIES roscpp_demoapp
+#  CATKIN_DEPENDS core_api roscpp rospy
+#  DEPENDS system_lib
+)
 
 ###########
 ## Build ##
@@ -121,12 +121,9 @@ include_directories(
 )
 
 ## Declare a C++ library
-#add_library(${PROJECT_NAME}
+# add_library(${PROJECT_NAME}
 #   src/${PROJECT_NAME}/roscpp_demoapp.cpp
 # )
-
-#set(core_api)
-#add_library(${PROJECT_NAME} ${core_api})
 
 ## Add cmake target dependencies of the library
 ## as an example, code may need to be generated before libraries
@@ -136,11 +133,11 @@ include_directories(
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
-add_executable(flight2point_node src/flight_2_point.cpp)
-target_link_libraries(flight2point_node ${catkin_LIBRARIES})
-
 add_executable(flight2change_point_node src/flight_2_change_point_.cpp)
 target_link_libraries(flight2change_point_node ${catkin_LIBRARIES})
+
+add_executable(flight2point_node src/flight_2_point.cpp)
+target_link_libraries(flight2point_node ${catkin_LIBRARIES})
 
 add_executable(global_position_node src/global_position.cpp)
 target_link_libraries(global_position_node ${catkin_LIBRARIES})
