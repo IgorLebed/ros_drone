@@ -1,7 +1,7 @@
 #include <ros/ros.h>
 #include <geometry_msgs/TwistStamped.h>
 
-//std::string global_namespace;
+std::string global_namespace;
 
 geometry_msgs::TwistStamped geom_msg;
 
@@ -21,7 +21,7 @@ int main(int argc, char **argv)
         ros::NodeHandle nh;
 
         //TODO ("/flytsim/mavros/..") -> ("/"+global_namespace+"...")
-        ros::Subscriber sub = nh.subscribe("/flytsim/mavros/imu/data_euler", 1, attitude_callback);
+        ros::Subscriber sub = nh.subscribe("/flytos/mavros/imu/data_euler", 1, attitude_callback);
         ros::spin();
         return 0;
 }

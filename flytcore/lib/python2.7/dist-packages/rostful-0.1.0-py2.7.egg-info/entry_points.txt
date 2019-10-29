@@ -1,3 +1,0 @@
-[console_scripts]
-rostful = rostful.__main__:cli
-

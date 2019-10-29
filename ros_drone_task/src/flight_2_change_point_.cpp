@@ -40,7 +40,7 @@ int main(int argc, char **argv)
   }
 
   float side_length = std::stof(argv[1]);             //Convert Argument from string to float
-  ros::init(argc, argv, "roscpp_demoapp1");
+  ros::init(argc, argv, "flight_2_point");
   ros::NodeHandle nh;
 
   ros::ServiceClient namespace_client = nh.serviceClient<core_api::ParamGetGlobalNamespace>("/get_global_namespace");

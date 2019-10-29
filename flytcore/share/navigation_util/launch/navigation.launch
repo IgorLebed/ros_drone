@@ -1,3 +1,0 @@
-<launch>
-    <node pkg="navigation_util" name="navigation_server" type="navigation_server" />
-</launch>

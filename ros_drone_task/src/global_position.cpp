@@ -4,6 +4,7 @@
 #include <sensor_msgs/NavSatFix.h>
 
 sensor_msgs::NavSatFix gpos_data;
+std::string global_namespace;
 
 // %Tag(CALLBACK)%
 void position_callback(const sensor_msgs::NavSatFixConstPtr &gpos)
@@ -19,7 +20,7 @@ int main(int argc, char **argv)
   ros::init(argc, argv, "listener");
   ros::NodeHandle n;
 // %Tag(SUBSCRIBER)%
-  ros::Subscriber sub = n.subscribe("/flytsim/mavros/global_position/global", 1000, position_callback);
+  ros::Subscriber sub = n.subscribe("/flytos/mavros/global_position/global", 1000, position_callback);
 // %EndTag(SUBSCRIBER)%
   ros::spin();
   return 0;

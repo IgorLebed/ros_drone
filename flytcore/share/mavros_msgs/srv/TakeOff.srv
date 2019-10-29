@@ -1,6 +1,0 @@
-#Request : expects take off altitude in metres
-#Response : returns success=true if takeoff altitude is reached
-
-geometry_msgs/PoseStamped pose
----
-bool success

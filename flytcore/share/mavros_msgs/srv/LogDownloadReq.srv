@@ -1,6 +1,0 @@
-#Request : Time of Log
-#Response : returns success=true if Log List Downloaded Successfully
-
-uint8 logid
----
-bool success

@@ -1,9 +1,0 @@
-#Request : 
-#Response : returns success=true if Log List Successful
-
----
-bool success
-
-LogList[] loglist
-
-

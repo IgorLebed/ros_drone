@@ -151,6 +151,10 @@ target_link_libraries(global_position_node ${catkin_LIBRARIES})
 add_executable(emergency_battery_land_node src/emergency_battery.cpp)
 target_link_libraries(emergency_battery_land_node ${catkin_LIBRARIES})
 
+add_executable(takeoff_and_land_node src/takeoff_and_land.cpp)
+target_link_libraries(takeoff_and_land_node ${catkin_LIBRARIES})
+
+
 #############
 ## Install ##
 #############

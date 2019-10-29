@@ -1,6 +1,0 @@
-#Request : NULL
-#Response : returns success=true if RTL is activated
-
----
-bool success
-string message

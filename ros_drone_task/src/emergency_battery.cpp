@@ -50,7 +50,7 @@ int main(int argc, char **argv)
   //namespace_client.call(namespace_srv);
   //global_namespace = namespace_srv.response.param_info.param_value;
 
-  ros::Subscriber sub = n.subscribe("/flytsim/mavros/battery", 1, battery_callback);
+  ros::Subscriber sub = n.subscribe("/flytos/mavros/battery", 1, battery_callback);
   ros::spin();
 
   //land_client   = n.serviceClient<core_api::Land>("/"+global_namespace+"/navigation/land");

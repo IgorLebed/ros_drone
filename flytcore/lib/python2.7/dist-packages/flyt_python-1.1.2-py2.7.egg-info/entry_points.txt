@@ -1,3 +1,0 @@
-[console_scripts]
-flyt_python = flyt_python.__main__:main
-

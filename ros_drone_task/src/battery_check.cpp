@@ -2,6 +2,7 @@
 #include <sensor_msgs/BatteryState.h>
 
 //sensor_msgs::BatteryState battery_date;
+std::string global_namespace;
 
 void battery_callback(const sensor_msgs::BatteryStateConstPtr &battery)
 {
@@ -17,7 +18,7 @@ int main(int argc, char **argv)
 {
   ros::init(argc, argv, "battery_callback");
   ros::NodeHandle n;
-  ros::Subscriber sub = n.subscribe("/flytsim/mavros/battery", 1000, battery_callback);
+  ros::Subscriber sub = n.subscribe("/flytos/mavros/battery", 1000, battery_callback);
   ros::spin();
   return 0;
 }

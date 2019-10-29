@@ -1,6 +1,0 @@
-# AppControl
-
-string app_name
-string arguments
----
-bool success

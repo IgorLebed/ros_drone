@@ -1,8 +1,0 @@
-
----
-bool success
-uint8 error_code
-string message
----
-int32 status
-string message
