@@ -139,8 +139,11 @@ target_link_libraries(emergency_battery_land_node ${catkin_LIBRARIES})
 add_executable(emergency_battery_rtl_node src/emergency_battery_rtl.cpp)
 target_link_libraries(emergency_battery_rtl_node ${catkin_LIBRARIES})
 
-add_executable(emergency_altitude_rtl_node src/emergency_altitude_rtl.cpp)
-target_link_libraries(emergency_altitude_rtl_node ${catkin_LIBRARIES})
+add_executable(global_altitude_rtl_node src/global_altitude_rtl.cpp)
+target_link_libraries(global_altitude_rtl_node ${catkin_LIBRARIES})
+
+add_executable(local_altitude_rtl_node src/local_altitude_rtl.cpp)
+target_link_libraries(local_altitude_rtl_node ${catkin_LIBRARIES})
 #############
 ## Install ##
 #############
