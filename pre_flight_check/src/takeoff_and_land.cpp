@@ -24,7 +24,7 @@ int main(int argc, char **argv)
     }
 
     float height = std::stof(argv[1]);             //Convert Argument from string to float
-    ros::init(argc, argv, "arm_disarm");
+    ros::init(argc, argv, "takeoff_and_land");
     ros::NodeHandle nh;
 
     ros::ServiceClient namespace_client = nh.serviceClient<core_api::ParamGetGlobalNamespace>("/get_global_namespace");
