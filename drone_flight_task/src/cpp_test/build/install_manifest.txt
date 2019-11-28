@@ -1,0 +1,7 @@
+/usr/local/flytos/flytapps/_setup_util.py
+/usr/local/flytos/flytapps/env.sh
+/usr/local/flytos/flytapps/setup.bash
+/usr/local/flytos/flytapps/setup.sh
+/usr/local/flytos/flytapps/setup.zsh
+/usr/local/flytos/flytapps/.rosinstall
+/flyt/userapps/onboard_user/install/flight_gps_point

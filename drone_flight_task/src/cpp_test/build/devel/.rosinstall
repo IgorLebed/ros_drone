@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /flyt/git/ros_drone/drone_flight_task/src/cpp_test/build/devel/setup.sh
