@@ -56,11 +56,11 @@ def photo_pose(RUN=True, last_time=time(), img_counter=0):
         path = link_path()
         if make_photo(last_time, now):
             # f_name = str(img_counter) + ".jpg"
-            f_name = str(now) + ".jpg"
+            f_name = str(img_counter) + ".jpg"
             cv2.imwrite(os.path.join(path, f_name), img)
-            img_set = pexif.JpegFile.fromFile(str(link_photo()) + str(now) + ".jpg")
+            img_set = pexif.JpegFile.fromFile(str(link_photo()) + str(img_counter) + ".jpg")
             img_set.set_geo(float(pose_v[0]), float(pose_v[1]), float(pose_v[2]))
-            img_set.writeFile(str(link_geo_photo()) + str(now) + "_with_geo.jpg")
+            img_set.writeFile(str(link_geo_photo()) + str(img_counter) + "_with_geo.jpg")
             img_counter += 1
             last_time = now
             # print(f_name + " has been saved at " + str(now))
